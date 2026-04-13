@@ -1,0 +1,28 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.swp
+*.swo
+
+# Backend
+backend/target/
+backend/*.jar
+backend/.mvn/wrapper/maven-wrapper.jar
+
+# Frontend
+frontend/node_modules/
+
+# Environment
+.env
+*.log
+
+# Old mockups (optional - can be removed after migration)
+# tablero_kanban/
+# detalle_de_tarea/
+# entrada_r_pida/
+# vista_de_calendario/

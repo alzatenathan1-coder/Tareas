@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Fluid Taskscape</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Ambient background blobs -->
+  <div class="ambient-blob" style="top: -100px; left: -100px; width: 300px; height: 300px; background: var(--primary);"></div>
+  <div class="ambient-blob" style="bottom: 100px; right: -50px; width: 250px; height: 250px; background: var(--tertiary);"></div>
+
+  <header class="top-bar glass" id="main-header">
+    <h1 style="font-size: 16px; font-weight: 800; letter-spacing: -0.02em; margin: 0; display: flex; align-items: center; gap: 8px;">
+      <span class="material-symbols-outlined" style="color: var(--primary);">space_dashboard</span>
+      Taskscape
+    </h1>
+    <div style="width: 32px; height: 32px; border-radius: 50%; background: var(--bg-surface-3); display: flex; align-items: center; justify-content: center; border: 1px solid var(--outline);">
+      <span class="material-symbols-outlined" style="font-size: 18px; color: var(--text-secondary);">person</span>
+    </div>
+  </header>
+
+  <main id="app"></main>
+
+  <nav class="bottom-nav glass-heavy shadow-ambient" id="main-bottom-nav">
+    <div style="display: flex; justify-content: space-around; align-items: center; position: relative;">
+      <a href="#/board" id="nav-board" class="active">
+        <span class="material-symbols-outlined">view_kanban</span>
+        <span class="nav-label">Tablero</span>
+      </a>
+      
+      <!-- Placeholder div to create space for FAB -->
+      <div style="width: 56px;"></div>
+
+      <a href="#/calendar" id="nav-calendar">
+        <span class="material-symbols-outlined">calendar_month</span>
+        <span class="nav-label">Calendario</span>
+      </a>
+    </div>
+  </nav>
+
+  <button id="fab-add" class="fab shadow-glow-primary">
+    <span class="material-symbols-outlined">add</span>
+  </button>
+
+  <div id="toast" class="toast"></div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

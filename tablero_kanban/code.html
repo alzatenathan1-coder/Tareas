@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#93000a",
+                        "on-surface": "#151c27",
+                        "tertiary-fixed-dim": "#ffb3ad",
+                        "on-secondary-fixed": "#001a42",
+                        "tertiary": "#b61722",
+                        "inverse-primary": "#adc6ff",
+                        "surface-variant": "#dce2f3",
+                        "surface": "#f9f9ff",
+                        "primary-fixed": "#d8e2ff",
+                        "primary-fixed-dim": "#adc6ff",
+                        "tertiary-container": "#da3437",
+                        "tertiary-fixed": "#ffdad7",
+                        "on-tertiary-fixed-variant": "#930013",
+                        "surface-dim": "#d3daea",
+                        "inverse-surface": "#2a313d",
+                        "primary": "#0058be",
+                        "on-background": "#151c27",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#fffbff",
+                        "on-secondary-container": "#405682",
+                        "error": "#ba1a1a",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "surface-container": "#e7eefe",
+                        "on-secondary-fixed-variant": "#304671",
+                        "secondary-fixed": "#d8e2ff",
+                        "outline-variant": "#c2c6d6",
+                        "surface-bright": "#f9f9ff",
+                        "primary-container": "#2170e4",
+                        "surface-tint": "#005ac2",
+                        "on-tertiary-fixed": "#410004",
+                        "background": "#f9f9ff",
+                        "surface-container-highest": "#dce2f3",
+                        "on-primary-fixed-variant": "#004395",
+                        "on-primary-container": "#fefcff",
+                        "on-primary-fixed": "#001a42",
+                        "secondary-fixed-dim": "#b1c6f9",
+                        "outline": "#727785",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#495e8a",
+                        "on-surface-variant": "#424754",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#b6ccff",
+                        "surface-container-low": "#f0f3ff",
+                        "surface-container-high": "#e2e8f8",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#ebf1ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "3xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl">
+<div class="flex justify-between items-center px-6 h-16 w-full">
+<button class="p-2 hover:bg-slate-100/50 dark:hover:bg-slate-800/50 transition-colors rounded-full active:scale-95 active:duration-150">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400">menu</span>
+</button>
+<h1 class="text-lg font-black text-slate-900 dark:text-slate-50 font-['Inter'] tracking-tight">Fluid Taskscape</h1>
+<button class="p-2 hover:bg-slate-100/50 dark:hover:bg-slate-800/50 transition-colors rounded-full active:scale-95 active:duration-150">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400">notifications</span>
+</button>
+</div>
+</header>
+<main class="pt-20 pb-32 px-6">
+<!-- Dashboard Greeting -->
+<div class="mb-8">
+<h2 class="text-3xl font-extrabold tracking-tight text-on-surface mb-1">Board</h2>
+<p class="text-on-surface-variant text-sm font-medium">Monday, Oct 23</p>
+</div>
+<!-- Sticky Tab Selector -->
+<div class="sticky top-20 z-40 mb-8 overflow-x-auto hide-scrollbar -mx-6 px-6">
+<div class="flex space-x-2 p-1.5 bg-surface-container-low rounded-3xl w-max">
+<button class="px-6 py-2.5 rounded-2xl bg-surface-container-lowest text-primary font-bold text-sm shadow-[0_4px_12px_rgba(0,0,0,0.04)] transition-all">
+                    Pendiente
+                </button>
+<button class="px-6 py-2.5 rounded-2xl text-on-surface-variant font-medium text-sm hover:bg-surface-container-high transition-all">
+                    Haciendo
+                </button>
+<button class="px-6 py-2.5 rounded-2xl text-on-surface-variant font-medium text-sm hover:bg-surface-container-high transition-all">
+                    Hecho
+                </button>
+</div>
+</div>
+<!-- Task Grid/List (FIFO Order) -->
+<div class="space-y-4">
+<!-- Card 1: Urgent -->
+<article class="bg-surface-container-lowest rounded-xl p-5 relative overflow-hidden shadow-[0_4px_24px_rgba(21,28,39,0.04)] flex flex-col transition-transform active:scale-[0.98]">
+<!-- Priority Indicator Glow -->
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-tertiary to-tertiary-container"></div>
+<div class="flex justify-between items-start mb-3">
+<span class="text-[10px] font-bold uppercase tracking-wider text-tertiary bg-tertiary-fixed px-2 py-0.5 rounded">Urgent</span>
+<span class="material-symbols-outlined text-outline text-lg">more_horiz</span>
+</div>
+<h3 class="text-lg font-bold text-on-surface leading-tight mb-4">Complete structural audit for Q4 roadmap</h3>
+<div class="mt-auto flex items-center justify-between">
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-sm text-outline">calendar_today</span>
+<time class="text-[11px] font-medium text-on-surface-variant uppercase tracking-wider">Oct 19, 2023</time>
+</div>
+<div class="flex -space-x-2">
+<img class="w-6 h-6 rounded-full border-2 border-surface-container-lowest object-cover" data-alt="close-up portrait of a woman with professional neutral lighting and a blurred office background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALLhI6h4WU6GO4Xdz6x-lZoMVY7pdH0v9sgmV0ndPQdJ4PtePWSbStY2W35Y1CgfFiCdS3aEcZ3Gv7AioOcraOOMAlxFAOc3z-IMjozy5WvLj5B7nBcTrRpJiDg__9M4Mt4FMRhZFYoOR3m48QEPV26n1t9TrSD3kl8DvSwJ2lOTROWP2IMAwLuX_BatL16_35zFKz8-go8sTEzOwTrgUx7jxP1xPaBcZ_khUBlWU1kC1w2jbWIExYxTAiwkgooBjmwkwk1U1upT99"/>
+</div>
+</div>
+</article>
+<!-- Card 2: Standard -->
+<article class="bg-surface-container-lowest rounded-xl p-5 relative overflow-hidden shadow-[0_4px_24px_rgba(21,28,39,0.04)] flex flex-col transition-transform active:scale-[0.98]">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-primary to-primary-container"></div>
+<div class="flex justify-between items-start mb-3">
+<span class="text-[10px] font-bold uppercase tracking-wider text-primary bg-primary-fixed px-2 py-0.5 rounded">Standard</span>
+<span class="material-symbols-outlined text-outline text-lg">more_horiz</span>
+</div>
+<h3 class="text-lg font-bold text-on-surface leading-tight mb-4">Finalize UI kit for Fluid Taskscape Design System</h3>
+<div class="mt-auto flex items-center justify-between">
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-sm text-outline">calendar_today</span>
+<time class="text-[11px] font-medium text-on-surface-variant uppercase tracking-wider">Oct 20, 2023</time>
+</div>
+<div class="flex -space-x-2">
+<img class="w-6 h-6 rounded-full border-2 border-surface-container-lowest object-cover" data-alt="professional male portrait with soft daylight against a minimalist concrete wall" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaCaObbW9S9We4edTiCFvxX3hNmCCM9fdPECuTqmCEf_EXcN6Bhng-Tz8_2t9OQJmskKlDRZ75uNcKmh6NKZq2N9tiauFYgBk_8wJT2Ff7QlLjKd51JXhIpSINMF02-VygstogZcDyMfyw-BvA1mO4nChmQti7VdX-QvdjLZBLlJci7oTp5VxT3FE5NyK6GrOp47HLlXgFlgARfi4R0pZrw_gQBEwY6mQ5uFYb2ajMBSbIvhxhLhpuid1nhq9yhhx-krGPILXT-7c_"/>
+<img class="w-6 h-6 rounded-full border-2 border-surface-container-lowest object-cover" data-alt="headshot of a smiling woman with warm golden hour lighting and lush foliage bokeh" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBP13ateo5xtOUHB5GJfD6v0g4lPAnlFFPrIBokie2uippCmf0AaIfbvD87cz1Y7N0ARYqPS-YL-eK7PNv23Bu14b3Rs9DtvkJH2kUY1F8nHDpBuE5dl5aQ4X5c-1XxW-qd42MOkqPBTOlMiMKRN7esu0z5ReF0whMHSGQk3l4jJlKl6TABVQumjsXoU8pNbLGMFvJvOV8ffAOJly3FkjuA5dj97g4LXNTn77zMSyUCjmhvrg7dBvI4NbL7AqGHXtumYkOA8jKNpWYI"/>
+</div>
+</div>
+</article>
+<!-- Card 3: Low -->
+<article class="bg-surface-container-lowest rounded-xl p-5 relative overflow-hidden shadow-[0_4px_24px_rgba(21,28,39,0.04)] flex flex-col transition-transform active:scale-[0.98]">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-secondary to-secondary-container"></div>
+<div class="flex justify-between items-start mb-3">
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary-fixed px-2 py-0.5 rounded">Low Priority</span>
+<span class="material-symbols-outlined text-outline text-lg">more_horiz</span>
+</div>
+<h3 class="text-lg font-bold text-on-surface leading-tight mb-4">Draft blog post about PWA performance optimization</h3>
+<div class="mt-auto flex items-center justify-between">
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-sm text-outline">calendar_today</span>
+<time class="text-[11px] font-medium text-on-surface-variant uppercase tracking-wider">Oct 21, 2023</time>
+</div>
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full bg-surface-container-high border-2 border-surface-container-lowest flex items-center justify-center text-[8px] font-bold text-on-surface-variant">JS</div>
+</div>
+</div>
+</article>
+<!-- Card 4: Standard -->
+<article class="bg-surface-container-lowest rounded-xl p-5 relative overflow-hidden shadow-[0_4px_24px_rgba(21,28,39,0.04)] flex flex-col transition-transform active:scale-[0.98]">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-primary to-primary-container"></div>
+<div class="flex justify-between items-start mb-3">
+<span class="text-[10px] font-bold uppercase tracking-wider text-primary bg-primary-fixed px-2 py-0.5 rounded">Standard</span>
+<span class="material-symbols-outlined text-outline text-lg">more_horiz</span>
+</div>
+<h3 class="text-lg font-bold text-on-surface leading-tight mb-4">Stakeholder meeting regarding accessibility updates</h3>
+<div class="mt-auto flex items-center justify-between">
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-sm text-outline">calendar_today</span>
+<time class="text-[11px] font-medium text-on-surface-variant uppercase tracking-wider">Oct 22, 2023</time>
+</div>
+<div class="flex -space-x-2">
+<img class="w-6 h-6 rounded-full border-2 border-surface-container-lowest object-cover" data-alt="confident professional woman in a modern office setting with sharp focus and clean lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_EaEC36HsPqV7KtBRgvsPLqAMcmORljzKunIMDNrN_RZ3dLDJhsf2_aI7FKFKUrHNtPlCtiEYcueB_q9EASNjZ8XKRejErRU2-MdK6lZqppZE5CHiZaeQk6ClOTNjEcQsSKPiUfc8chqFVWLtf5cnxhjGi2ZHUG3AKaAAMwOX-w3a1VCQmTiVBEOa2XqDfv1ad0OR_uBavr3X1KTu8EPFL2xrh10yH9NmOmx8qlBp06qCTJAdviTNrR0j2xWgwokZyCAF4LIfEPsr"/>
+</div>
+</div>
+</article>
+</div>
+</main>
+<!-- Floating Action Button -->
+<button class="fixed bottom-24 right-6 w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center shadow-[0_8px_32px_rgba(0,88,190,0.3)] z-50 transition-transform active:scale-90 hover:scale-110">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0, 'wght' 600, 'GRAD' 0, 'opsz' 24;">add</span>
+</button>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-white/85 dark:bg-slate-900/85 backdrop-blur-2xl rounded-t-3xl shadow-[0_-4px_24px_rgba(21,28,39,0.04)]">
+<div class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pt-3 pb-8">
+<a class="flex flex-col items-center justify-center text-blue-600 dark:text-blue-400 relative after:content-[''] after:absolute after:bottom-[-4px] after:w-1 after:h-1 after:bg-blue-600 after:rounded-full group" href="#">
+<span class="material-symbols-outlined mb-1 group-active:scale-90 duration-200" style="font-variation-settings: 'FILL' 1;">view_kanban</span>
+<span class="font-['Inter'] text-[11px] uppercase tracking-[0.05em] font-bold">Board</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 hover:text-blue-500 transition-all group" href="#">
+<span class="material-symbols-outlined mb-1 group-active:scale-90 duration-200">calendar_today</span>
+<span class="font-['Inter'] text-[11px] uppercase tracking-[0.05em] font-medium">Calendar</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 hover:text-blue-500 transition-all group" href="#">
+<span class="material-symbols-outlined mb-1 group-active:scale-90 duration-200">person</span>
+<span class="font-['Inter'] text-[11px] uppercase tracking-[0.05em] font-medium">Profile</span>
+</a>
+</div>
+</nav>
+</body></html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fluid Taskscape - Quick Entry</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error-container": "#93000a",
+                    "on-surface": "#151c27",
+                    "tertiary-fixed-dim": "#ffb3ad",
+                    "on-secondary-fixed": "#001a42",
+                    "tertiary": "#b61722",
+                    "inverse-primary": "#adc6ff",
+                    "surface-variant": "#dce2f3",
+                    "surface": "#f9f9ff",
+                    "primary-fixed": "#d8e2ff",
+                    "primary-fixed-dim": "#adc6ff",
+                    "tertiary-container": "#da3437",
+                    "tertiary-fixed": "#ffdad7",
+                    "on-tertiary-fixed-variant": "#930013",
+                    "surface-dim": "#d3daea",
+                    "inverse-surface": "#2a313d",
+                    "primary": "#0058be",
+                    "on-background": "#151c27",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-container": "#fffbff",
+                    "on-secondary-container": "#405682",
+                    "error": "#ba1a1a",
+                    "on-tertiary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "surface-container": "#e7eefe",
+                    "on-secondary-fixed-variant": "#304671",
+                    "secondary-fixed": "#d8e2ff",
+                    "outline-variant": "#c2c6d6",
+                    "surface-bright": "#f9f9ff",
+                    "primary-container": "#2170e4",
+                    "surface-tint": "#005ac2",
+                    "on-tertiary-fixed": "#410004",
+                    "background": "#f9f9ff",
+                    "surface-container-highest": "#dce2f3",
+                    "on-primary-fixed-variant": "#004395",
+                    "on-primary-container": "#fefcff",
+                    "on-primary-fixed": "#001a42",
+                    "secondary-fixed-dim": "#b1c6f9",
+                    "outline": "#727785",
+                    "on-secondary": "#ffffff",
+                    "secondary": "#495e8a",
+                    "on-surface-variant": "#424754",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-container": "#b6ccff",
+                    "surface-container-low": "#f0f3ff",
+                    "surface-container-high": "#e2e8f8",
+                    "on-primary": "#ffffff",
+                    "inverse-on-surface": "#ebf1ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        }
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .priority-slider::-webkit-slider-runnable-track {
+        background: linear-gradient(90deg, #b61722 0%, #0058be 100%);
+        height: 6px;
+        border-radius: 9999px;
+      }
+      .priority-slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        height: 24px;
+        width: 24px;
+        background: white;
+        border: 2px solid #151c27;
+        border-radius: 50%;
+        margin-top: -9px;
+      }
+      input:focus { outline: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body antialiased min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl">
+<div class="flex justify-between items-center px-6 h-16 w-full">
+<button class="text-blue-600 dark:text-blue-400 p-2 hover:bg-slate-100/50 dark:hover:bg-slate-800/50 transition-colors rounded-full active:scale-95 duration-150">
+<span class="material-symbols-outlined">close</span>
+</button>
+<h1 class="text-lg font-black text-slate-900 dark:text-slate-50 font-headline tracking-tight">Fluid Taskscape</h1>
+<button class="text-blue-600 dark:text-blue-400 p-2 hover:bg-slate-100/50 dark:hover:bg-slate-800/50 transition-colors rounded-full active:scale-95 duration-150">
+<span class="material-symbols-outlined">done</span>
+</button>
+</div>
+</header>
+<!-- Content Canvas -->
+<main class="flex-grow flex flex-col items-center justify-center px-6 pt-16 pb-12">
+<div class="w-full max-w-lg space-y-12">
+<!-- Quick Entry Field -->
+<div class="space-y-4">
+<label class="text-[11px] uppercase tracking-[0.05em] font-medium text-secondary/70 px-1" for="task-input">Task Definition</label>
+<div class="relative group">
+<textarea class="w-full bg-surface-container-low text-on-surface text-2xl md:text-3xl font-headline font-semibold p-6 rounded-2xl border-none focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-highest transition-all resize-none placeholder:text-on-surface-variant/30" id="task-input" placeholder="What needs to be done?" rows="3"></textarea>
+</div>
+</div>
+<!-- Contextual Options -->
+<div class="grid grid-cols-1 gap-10">
+<!-- Status Selection -->
+<div class="space-y-4">
+<h3 class="text-[11px] uppercase tracking-[0.05em] font-medium text-secondary/70 px-1">Status</h3>
+<div class="flex flex-wrap gap-3">
+<button class="px-6 py-3 bg-primary text-on-primary rounded-full font-semibold text-sm shadow-sm active:scale-95 duration-200">
+                            Pendiente
+                        </button>
+<button class="px-6 py-3 bg-surface-container-high text-on-surface-variant rounded-full font-semibold text-sm hover:bg-surface-container-highest transition-colors active:scale-95 duration-200">
+                            En Proceso
+                        </button>
+<button class="px-6 py-3 bg-surface-container-high text-on-surface-variant rounded-full font-semibold text-sm hover:bg-surface-container-highest transition-colors active:scale-95 duration-200">
+                            Backlog
+                        </button>
+</div>
+</div>
+<!-- Priority Slider -->
+<div class="space-y-4">
+<div class="flex justify-between items-center px-1">
+<h3 class="text-[11px] uppercase tracking-[0.05em] font-medium text-secondary/70">Priority Level</h3>
+<span class="text-[11px] uppercase tracking-[0.05em] font-bold text-tertiary">Urgent to Standard</span>
+</div>
+<div class="bg-surface-container-low p-8 rounded-2xl">
+<input class="priority-slider w-full h-1.5 appearance-none cursor-pointer bg-transparent" max="100" min="1" type="range" value="80"/>
+<div class="flex justify-between mt-6 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant/50">
+<span>High Priority</span>
+<span>Low Priority</span>
+</div>
+</div>
+</div>
+<!-- Tags & Metadata (Secondary pebbles) -->
+<div class="flex flex-wrap gap-2">
+<button class="flex items-center gap-2 px-4 py-2 bg-surface-container-high rounded-full text-xs font-bold text-on-secondary-container">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+                        Hoy
+                    </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-surface-container-high rounded-full text-xs font-bold text-on-secondary-container">
+<span class="material-symbols-outlined text-sm">person</span>
+                        Asignar
+                    </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-surface-container-high rounded-full text-xs font-bold text-on-secondary-container">
+<span class="material-symbols-outlined text-sm">sell</span>
+                        Tag
+                    </button>
+</div>
+</div>
+<!-- Submit Button (FAB replacement for focus) -->
+<div class="pt-6">
+<button class="w-full py-5 bg-primary text-on-primary rounded-full font-bold text-lg shadow-xl active:scale-[0.98] transition-all flex justify-center items-center gap-3">
+<span class="material-symbols-outlined">rocket_launch</span>
+                    Create Task
+                </button>
+</div>
+</div>
+</main>
+<!-- Decoration / Asymmetry Elements -->
+<div class="fixed top-24 -left-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+<div class="fixed bottom-10 -right-20 w-80 h-80 bg-tertiary/5 rounded-full blur-3xl pointer-events-none"></div>
+</body></html>

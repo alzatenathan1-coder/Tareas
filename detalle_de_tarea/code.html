@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Task Detail - Fluid Taskscape</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#93000a",
+                        "on-surface": "#151c27",
+                        "tertiary-fixed-dim": "#ffb3ad",
+                        "on-secondary-fixed": "#001a42",
+                        "tertiary": "#b61722",
+                        "inverse-primary": "#adc6ff",
+                        "surface-variant": "#dce2f3",
+                        "surface": "#f9f9ff",
+                        "primary-fixed": "#d8e2ff",
+                        "primary-fixed-dim": "#adc6ff",
+                        "tertiary-container": "#da3437",
+                        "tertiary-fixed": "#ffdad7",
+                        "on-tertiary-fixed-variant": "#930013",
+                        "surface-dim": "#d3daea",
+                        "inverse-surface": "#2a313d",
+                        "primary": "#0058be",
+                        "on-background": "#151c27",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#fffbff",
+                        "on-secondary-container": "#405682",
+                        "error": "#ba1a1a",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "surface-container": "#e7eefe",
+                        "on-secondary-fixed-variant": "#304671",
+                        "secondary-fixed": "#d8e2ff",
+                        "outline-variant": "#c2c6d6",
+                        "surface-bright": "#f9f9ff",
+                        "primary-container": "#2170e4",
+                        "surface-tint": "#005ac2",
+                        "on-tertiary-fixed": "#410004",
+                        "background": "#f9f9ff",
+                        "surface-container-highest": "#dce2f3",
+                        "on-primary-fixed-variant": "#004395",
+                        "on-primary-container": "#fefcff",
+                        "on-primary-fixed": "#001a42",
+                        "secondary-fixed-dim": "#b1c6f9",
+                        "outline": "#727785",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#495e8a",
+                        "on-surface-variant": "#424754",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#b6ccff",
+                        "surface-container-low": "#f0f3ff",
+                        "surface-container-high": "#e2e8f8",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#ebf1ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "3xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; background-color: #f9f9ff; }
+        .glass-nav { backdrop-filter: blur(20px); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-4">
+<button class="hover:bg-slate-100/50 dark:hover:bg-slate-800/50 transition-colors p-2 rounded-full active:duration-150 active:scale-95">
+<span class="material-symbols-outlined text-slate-500">arrow_back</span>
+</button>
+<h1 class="text-lg font-black text-slate-900 dark:text-slate-50 font-['Inter'] font-bold tracking-tight">Fluid Taskscape</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="hover:bg-slate-100/50 dark:hover:bg-slate-800/50 transition-colors p-2 rounded-full active:duration-150 active:scale-95">
+<span class="material-symbols-outlined text-slate-500">more_vert</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="pt-24 pb-32 px-6 max-w-2xl mx-auto">
+<!-- Header Section -->
+<section class="mb-10">
+<div class="flex items-center gap-2 mb-4">
+<span class="bg-primary-container text-on-primary-container text-[11px] font-bold tracking-[0.05em] uppercase px-3 py-1 rounded-full">In Progress</span>
+<span class="text-on-surface-variant text-[11px] tracking-[0.05em] uppercase font-medium">Created Oct 24, 2023</span>
+</div>
+<h2 class="text-4xl font-black text-on-surface leading-tight tracking-tight mb-4">Redesign the modular authentication interface for V2</h2>
+</section>
+<!-- Bento Grid Details -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+<!-- Description Card -->
+<div class="md:col-span-2 bg-surface-container-lowest p-6 rounded-3xl">
+<p class="text-label-md text-on-surface-variant font-bold uppercase tracking-[0.05em] mb-3">Project Scope</p>
+<p class="text-on-surface leading-relaxed text-lg font-medium">
+                    The current login flow feels dated. We need to implement kinetic serene patterns, focusing on smooth transitions and a clear hierarchy. Ensure accessibility compliance for the tertiary red color scale used in alerts.
+                </p>
+</div>
+<!-- Priority Selector (Prominent) -->
+<div class="bg-surface-container-low p-6 rounded-3xl md:col-span-2">
+<p class="text-label-md text-on-surface-variant font-bold uppercase tracking-[0.05em] mb-4">Priority Gradient</p>
+<div class="flex items-center gap-3 w-full">
+<button class="flex-1 h-16 rounded-2xl bg-tertiary-container flex flex-col items-center justify-center text-on-tertiary-container transition-all active:scale-95 border-4 border-white">
+<span class="text-[10px] font-black uppercase">Urgent</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">priority_high</span>
+</button>
+<button class="flex-1 h-14 rounded-2xl bg-primary-container/20 text-primary-container flex flex-col items-center justify-center transition-all hover:bg-primary-container/30">
+<span class="text-[10px] font-bold uppercase">Standard</span>
+<span class="material-symbols-outlined">bolt</span>
+</button>
+<button class="flex-1 h-14 rounded-2xl bg-secondary-container/30 text-secondary flex flex-col items-center justify-center transition-all hover:bg-secondary-container/50">
+<span class="text-[10px] font-bold uppercase">Low</span>
+<span class="material-symbols-outlined">coffee</span>
+</button>
+</div>
+</div>
+<!-- Kanban Column Switcher -->
+<div class="bg-surface-container-low p-6 rounded-3xl md:col-span-2">
+<p class="text-label-md text-on-surface-variant font-bold uppercase tracking-[0.05em] mb-4">Current Column</p>
+<div class="flex flex-wrap gap-2">
+<button class="px-5 py-3 rounded-full bg-surface-container-high text-on-surface-variant font-semibold text-sm hover:bg-surface-container-highest transition-colors">To Do</button>
+<button class="px-5 py-3 rounded-full bg-primary text-white font-semibold text-sm shadow-lg shadow-primary/20">In Progress</button>
+<button class="px-5 py-3 rounded-full bg-surface-container-high text-on-surface-variant font-semibold text-sm hover:bg-surface-container-highest transition-colors">Review</button>
+<button class="px-5 py-3 rounded-full bg-surface-container-high text-on-surface-variant font-semibold text-sm hover:bg-surface-container-highest transition-colors">Done</button>
+</div>
+</div>
+</div>
+<!-- Task Metadata/Assignees -->
+<div class="flex items-center justify-between p-6 bg-surface-container-lowest rounded-3xl">
+<div class="flex items-center gap-4">
+<div class="relative w-12 h-12 rounded-full overflow-hidden border-2 border-white">
+<img class="w-full h-full object-cover" data-alt="portrait of a professional designer in a bright studio with soft natural lighting and minimalist background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApM1R4u3dTvk-8EMZeKtIECrAwrlNsdk_X994tZACusJQcRWVEtb45_2itOsnisX5B3fYj28pwjfe4d1lz8sqBpMH-2yq5zWKrewI8Qb2YuOF2oPhoeVLEVHSRY3VvUlCDkmBUvF1HVeFzkH-wy58cnRJsXV0aO9xXa2Lwpj48EMufpYhNGKDRcOSWA_MVuxe22cNKQrTlQSpjfUwpyH8D7Dl7COnOKz_g-RfYaCk7aQNe0ZpOlcjWhWWfcxcpOCRnTfKnJ19iZ9bY"/>
+</div>
+<div>
+<p class="text-sm font-bold text-on-surface">Assignee</p>
+<p class="text-xs text-on-surface-variant">Sarah Jenkins</p>
+</div>
+</div>
+<button class="p-3 rounded-full bg-surface-container-high text-primary active:scale-90 transition-transform">
+<span class="material-symbols-outlined">add_reaction</span>
+</button>
+</div>
+<!-- Collaborative Visual -->
+<div class="mt-8 rounded-3xl overflow-hidden h-48 relative">
+<img class="w-full h-full object-cover" data-alt="overhead view of a clean minimalist desk with a tablet displaying UI wireframes and a designer's hand using a stylus" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfY_G-BZnQnqr1a6k6WPkb4IBGwnb6qwE_px4bxAah5iPpFpkrHDb5gYC68R9i-cmmM-ubpSNVKuWOuGiqe8yXwBWKnwEZ_DlJB1Z9mYhKgXl5q8eL7EK7Pyvqd7O_aMJHUAeprn3K5xDr_xiL_vB1h62V6jLIV2aV8fMmwgQN4W2SEJgmw4H14fuglMlizqRjL39M12806ttj8A4RICAtcBGfJpB6ld6b7hU64X2MXaLo-0Fhn-S6reXQzKeJvee21j8zVCzQGsDv"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/60 to-transparent flex items-end p-6">
+<p class="text-white text-sm font-medium">Drafting phase: Design System V2</p>
+</div>
+</div>
+</main>
+<!-- FAB for Task Actions (Suppressed per rule as it's a detail screen, but standard buttons remain) -->
+<div class="fixed bottom-24 right-6 flex flex-col gap-3">
+<button class="w-14 h-14 rounded-full bg-primary text-white flex items-center justify-center shadow-2xl active:scale-90 transition-transform">
+<span class="material-symbols-outlined">check</span>
+</button>
+</div>
+<!-- BottomNavBar (Suppressed for focused Task Detail task according to Shell Visibility Rule, but keeping structure if context was "Home") -->
+<!-- Not rendered because this is a focused task/sub-page intent -->
+</body></html>
