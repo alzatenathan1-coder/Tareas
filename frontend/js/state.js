@@ -202,4 +202,71 @@ export function getSampleTasks() {
   ];
 }
 
+/**
+ * Inject 30-day motivational plan into tasks if not already done.
+ */
+export function injectMotivationalPlan() {
+  if (localStorage.getItem('ft_motivational_injected')) return;
+
+  const plan = [
+    { p: '¡Hoy es el día de empezar con energía! ¡A por todas!', s: 'Viva La Vida – Coldplay' },
+    { p: '¡No te rindas! ¡Tú puedes con todo!', s: 'Stronger – Kelly Clarkson' },
+    { p: '¡Sonríe! ¡La vida es bella!', s: 'Happy – Pharrell Williams' },
+    { p: '¡Haz algo divertido hoy! ¡Te lo mereces!', s: 'Don\'t Stop Me Now – Queen' },
+    { p: '¡Agradece lo que tienes!', s: 'Vivir Mi Vida – Marc Anthony' },
+    { p: '¡Ayuda a alguien hoy!', s: 'Walking on Sunshine – Katrina & The Waves' },
+    { p: '¡Aprende algo nuevo hoy!', s: 'Wake Me Up – Avicii' },
+    { p: '¡No dejes para mañana lo que puedes hacer hoy!', s: 'Can\'t Stop the Feeling! – Justin Timberlake' },
+    { p: '¡Haz algo que te guste hoy!', s: 'Uptown Funk – Mark Ronson' },
+    { p: '¡Sonríe a un desconocido hoy!', s: 'Bonito – Jarabe de Palo' },
+    { p: '¡No te compares con los demás!', s: 'Confident – Demi Lovato' },
+    { p: '¡Cree en ti mismo!', s: 'Believer – Imagine Dragons' },
+    { p: '¡No tengas miedo de fallar!', s: 'Lose Yourself – Eminem' },
+    { p: '¡Aprende de tus errores!', s: 'Shake It Off – Taylor Swift' },
+    { p: '¡No te rindas nunca!', s: 'Eye of the Tiger – Survivor' },
+    { p: '¡Sé feliz con lo que tienes!', s: 'Flowers – Miley Cyrus' },
+    { p: '¡Comparte lo que tienes!', s: 'La Gozadera – Gente de Zona' },
+    { p: '¡Sé amable con los demás!', s: 'Madre Tierra (Oye) – Chayanne' },
+    { p: '¡Sonríe! ¡La sonrisa es contagiosa!', s: 'Color Esperanza – Diego Torres' },
+    { p: '¡No te preocupes por el pasado!', s: 'It\'s My Life – Bon Jovi' },
+    { p: '¡No te preocupes por el futuro!', s: 'Celebra la Vida – Axel' },
+    { p: '¡Sé tú mismo!', s: 'Levitating – Dua Lipa' },
+    { p: '¡Cree en tus sueños!', s: 'On Top of the World – Imagine Dragons' },
+    { p: '¡No te rindas nunca!', s: 'Titanium – David Guetta' },
+    { p: '¡Sé feliz con lo que tienes!', s: 'La Bicicleta – Carlos Vives & Shakira' },
+    { p: '¡Comparte lo que tienes con los demás!', s: 'Robarte un Beso – Carlos Vives' },
+    { p: '¡Sé amable con los demás!', s: 'A Dios le Pido – Juanes' },
+    { p: '¡Sonríe!', s: 'The Best – Tina Turner' },
+    { p: '¡No te preocupes por el pasado!', s: 'Cero – Dani Martín' },
+    { p: '¡No dejes que nadie te diga lo que puedes hacer!', s: 'Roar – Katy Perry' }
+  ];
+
+  const today = new Date();
+  const fmt = (d) => d.toISOString().split('T')[0];
+  const newTasks = [];
+
+  plan.forEach((item, index) => {
+    const targetDate = new Date(today);
+    targetDate.setDate(today.getDate() + index); // Schedule one for each day starting today
+    
+    newTasks.push({
+      id: 'motiv-' + Date.now() + '-' + index,
+      title: 'Plan Día ' + (index + 1) + ': ' + item.p.substring(0, 30) + '...',
+      description: 'Frase del día: ' + item.p + '\n\nCanción recomendada: ' + item.s,
+      priority: 'STANDARD',
+      status: 'PENDIENTE',
+      dueDate: fmt(targetDate),
+      createdAt: fmt(today),
+    });
+  });
+
+  // Merge into existing state
+  state.tasks = [...state.tasks, ...newTasks];
+  try {
+    localStorage.setItem('ft_tasks_cache', JSON.stringify(state.tasks));
+    localStorage.setItem('ft_motivational_injected', 'true');
+  } catch (_) {}
+  notify();
+}
+
 export default state;

@@ -1,4 +1,4 @@
-import state, { setTasks, getSampleTasks, loadCachedTasks, onChange } from './state.js';
+import state, { setTasks, getSampleTasks, loadCachedTasks, onChange, injectMotivationalPlan } from './state.js';
 import { getTasks, healthCheck } from './api.js';
 import router from './router.js';
 
@@ -94,6 +94,9 @@ async function init() {
     if (hash === '#/board') renderView(kanbanView);
     if (hash === '#/calendar') renderView(calendarView);
   });
+
+  // Inject 30 days motivational plan tasks!
+  injectMotivationalPlan();
 
   // Start Router immediately to paint the UI
   router.startRouter();
