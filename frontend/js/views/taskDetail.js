@@ -124,7 +124,7 @@ export function render() {
             type="date"
             id="detail-due-date"
             class="form-input"
-            style="background: var(--bg-surface-3); color-scheme: dark;"
+            style="background: var(--bg-surface-3); color-scheme: light;"
             value="${task.dueDate || ''}"
           />
         </div>

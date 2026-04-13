@@ -5,41 +5,41 @@
 
 /* --- Design Tokens (CSS Custom Properties) --- */
 :root {
-  /* Background layers (darkest to lightest) */
-  --bg-base: #0c1117;
-  --bg-surface-1: #151c27;
-  --bg-surface-2: #1a2332;
-  --bg-surface-3: #202d3f;
-  --bg-surface-4: #283848;
+  /* Background layers (Light Mode) */
+  --bg-base: #f9f9ff;
+  --bg-surface-1: #ffffff;
+  --bg-surface-2: #f0f3ff;
+  --bg-surface-3: #e2e8f8;
+  --bg-surface-4: #dce2f3;
 
   /* Primary (Standard priority) */
-  --primary: #2170e4;
-  --primary-dark: #0058be;
-  --primary-glow: rgba(33, 112, 228, 0.25);
+  --primary: #0058be;
+  --primary-dark: #004395;
+  --primary-glow: rgba(0, 88, 190, 0.25);
   --primary-container: #d8e2ff;
 
   /* Tertiary (Urgent priority) */
-  --tertiary: #da3437;
-  --tertiary-dark: #b61722;
-  --tertiary-glow: rgba(218, 52, 55, 0.25);
+  --tertiary: #b61722;
+  --tertiary-dark: #930013;
+  --tertiary-glow: rgba(182, 23, 34, 0.25);
   --tertiary-container: #ffdad7;
 
   /* Secondary (Low priority) */
   --secondary: #495e8a;
-  --secondary-light: #b6ccff;
-  --secondary-glow: rgba(73, 94, 138, 0.25);
+  --secondary-light: #7a8fb8;
+  --secondary-glow: rgba(73, 94, 138, 0.15);
   --secondary-container: #d8e2ff;
 
   /* Text / On-surface */
-  --text-primary: #e1e5eb;
-  --text-secondary: #a0aec0;
-  --text-tertiary: #6b7a90;
-  --text-inverse: #0c1117;
+  --text-primary: #151c27;
+  --text-secondary: #424754;
+  --text-tertiary: #727785;
+  --text-inverse: #ffffff;
 
   /* Misc */
-  --outline: #3a4556;
+  --outline: #c2c6d6;
   --success: #2dd4a0;
-  --shadow-ambient: rgba(0, 0, 0, 0.35);
+  --shadow-ambient: rgba(21, 28, 39, 0.04);
 
   /* Spacing */
   --nav-height: 72px;
@@ -71,7 +71,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* --- Custom Scrollbar (dark theme) --- */
+/* --- Custom Scrollbar (light theme) --- */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -82,18 +82,18 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--bg-surface-3);
+  background: var(--outline);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--bg-surface-4);
+  background: var(--text-tertiary);
 }
 
 /* Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: var(--bg-surface-3) transparent;
+  scrollbar-color: var(--outline) transparent;
 }
 
 /* --- Hide scrollbar utility --- */
@@ -108,30 +108,30 @@ body {
 
 /* --- Glassmorphism Utilities --- */
 .glass {
-  background: rgba(21, 28, 39, 0.80);
+  background: rgba(255, 255, 255, 0.80);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
 }
 
 .glass-light {
-  background: rgba(26, 35, 50, 0.60);
+  background: rgba(255, 255, 255, 0.60);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
 }
 
 .glass-heavy {
-  background: rgba(12, 17, 23, 0.90);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
 }
 
 /* --- Ambient Shadows (no harsh borders) --- */
 .shadow-ambient {
-  box-shadow: 0 12px 32px var(--shadow-ambient);
+  box-shadow: 0 4px 24px var(--shadow-ambient);
 }
 
 .shadow-ambient-sm {
-  box-shadow: 0 6px 16px var(--shadow-ambient);
+  box-shadow: 0 4px 12px var(--shadow-ambient);
 }
 
 .shadow-glow-primary {
@@ -306,7 +306,7 @@ body {
   display: flex;
   gap: 6px;
   padding: 6px;
-  background: var(--bg-surface-1);
+  background: var(--bg-surface-2);
   border-radius: 20px;
   overflow-x: auto;
   white-space: nowrap;
@@ -327,13 +327,14 @@ body {
 }
 
 .tab-bar button:hover {
-  background: var(--bg-surface-2);
+  background: var(--bg-surface-3);
 }
 
 .tab-bar button.active {
-  background: var(--bg-surface-3);
+  background: var(--bg-surface-1);
   color: var(--primary);
   font-weight: 700;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
 }
 
 /* --- Priority Badge --- */
